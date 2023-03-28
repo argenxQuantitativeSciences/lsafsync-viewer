@@ -32,11 +32,14 @@ function App() {
         winHeight: window.innerHeight,
       });
     },
-    topSpace = 350,
+    topSpace = 300,
+    dropDownMargin = 150,
     [sectionSizes, setSectionSizes] = useState([topSpace, 200, 200]),
     calcSectionSizes = () => {
-      const section2 = Math.floor((windowDimension.winHeight - topSpace) / 2),
-        section3 = Math.floor((windowDimension.winHeight - topSpace) / 2);
+      const section2 = Math.floor(
+          (windowDimension.winHeight - topSpace) / 2 - 50
+        ),
+        section3 = Math.floor((windowDimension.winHeight - topSpace) / 2 + 50);
       setSectionSizes([topSpace, section2, section3]);
     },
     dataFromFiles = [],
@@ -512,7 +515,7 @@ function App() {
               value={compound}
               onChange={setCompound}
               menuIsOpen={true}
-              maxMenuHeight={sectionSizes[0] - 150}
+              maxMenuHeight={sectionSizes[0] - dropDownMargin}
               styles={selectStyles}
             />
           )}
@@ -525,7 +528,7 @@ function App() {
               value={indication}
               onChange={setIndication}
               menuIsOpen={true}
-              maxMenuHeight={200}
+              maxMenuHeight={sectionSizes[0] - dropDownMargin}
               styles={selectStyles}
             />
           )}
@@ -538,7 +541,7 @@ function App() {
               value={study}
               onChange={setStudy}
               menuIsOpen={true}
-              maxMenuHeight={200}
+              maxMenuHeight={sectionSizes[0] - dropDownMargin}
               styles={selectStyles}
             />
           )}
@@ -551,7 +554,7 @@ function App() {
               value={user}
               onChange={setUser}
               menuIsOpen={true}
-              maxMenuHeight={200}
+              maxMenuHeight={sectionSizes[0] - dropDownMargin}
               styles={selectStyles}
             />
           )}
@@ -564,7 +567,7 @@ function App() {
               value={year}
               onChange={setYear}
               menuIsOpen={true}
-              maxMenuHeight={200}
+              maxMenuHeight={sectionSizes[0] - dropDownMargin}
               styles={selectStyles}
             />
           )}
@@ -577,7 +580,7 @@ function App() {
               value={month}
               onChange={setMonth}
               menuIsOpen={true}
-              maxMenuHeight={200}
+              maxMenuHeight={sectionSizes[0] - dropDownMargin}
               styles={selectStyles}
             />
           )}
