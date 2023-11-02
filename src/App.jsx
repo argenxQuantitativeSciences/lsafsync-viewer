@@ -498,7 +498,7 @@ function App() {
     // eslint-disable-next-line
   }, [compound, indication, study, year, month, user, usesData]);
 
-  // console.log(graph2);
+  console.log(graph2);
 
   return (
     <Box>
